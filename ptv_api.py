@@ -43,15 +43,3 @@ class PtvApiV3:
                           request.encode('utf-8'), sha1)
         signature = hashed.hexdigest()
         return signature.upper()
-
-
-if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read('ptv_api_key')
-    devid = config.get('default', 'devid')
-    api_key = config.get('default', 'api_key')
-
-    con = PtvApiV3(devid=devid, api_key=api_key)
-    routes = con.get('routes')
-    print('The first route is:\n')
-    print(routes['routes'][0])
