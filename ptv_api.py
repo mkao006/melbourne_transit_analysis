@@ -1,4 +1,3 @@
-import configparser
 import requests
 from urllib.parse import urljoin
 from hashlib import sha1
